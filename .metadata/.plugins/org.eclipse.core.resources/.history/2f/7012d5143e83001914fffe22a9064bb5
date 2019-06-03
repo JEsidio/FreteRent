@@ -1,0 +1,13 @@
+spring.datasource.url=jdbc:sqlserver://localhost;databaseName=FreteRent
+spring.datasource.username=bob
+spring.datasource.password=bob
+spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto = create-drop
+spring.jpa.hibernate.ddl-auto = update
+
+#spring.datasource.initialization-mode=always
+
+spring.thymeleaf.check-template-location=true
+spring.thymeleaf.prefix=classpath:/templates/
+spring.thymeleaf.suffix=.html
