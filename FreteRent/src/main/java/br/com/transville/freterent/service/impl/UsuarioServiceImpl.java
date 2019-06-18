@@ -18,8 +18,17 @@ public class UsuarioServiceImpl implements UsuarioService {
 	
 	@Override
 	public List<Usuario> getAll() {
-		// TODO Auto-generated method stub
 		return repository.findAll();
+	}
+	
+	@Override
+	public void save(Usuario usuario) {
+		repository.save(usuario);
+	}
+	
+	@Override
+	public void delete(Usuario usuario) {
+		repository.delete(usuario);
 	}
 
 }

@@ -2,10 +2,14 @@ package br.com.transville.freterent.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -28,6 +32,23 @@ public class UsuarioController {
 	@GetMapping("/novo")
 	public ModelAndView createForm(@ModelAttribute Usuario usuario) {
 		return new ModelAndView("usuario/form");
+	}
+	
+	@PostMapping(params="form")
+	public ModelAndView save(@Valid Usuario usuario) {
+		usuarioService.save(usuario);
+		return new ModelAndView("redirect:/usuario");
+	}
+	
+	@GetMapping(value="/edit/{id}")
+	public ModelAndView eidt(@PathVariable("id") Usuario usuario) {
+		return new ModelAndView("usuario/form", "usuario", usuario);
+	}
+	
+	@GetMapping(value="/delete/{id}")
+	public ModelAndView delete(@PathVariable("id") Usuario usuario) {
+		usuarioService.delete(usuario);
+		return new ModelAndView("redirect:/usuario");
 	}
 	
 }

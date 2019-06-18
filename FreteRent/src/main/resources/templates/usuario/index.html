@@ -19,7 +19,12 @@
 				<tbody>
 					<tr scope="row" th:each="umusuario : ${usuarios}">
 						<td th:text="${umusuario.nome}"></td>
-						<td th:text="${umusuario.nivelUsuario}"></td>  
+						<td th:text="${umusuario.nivelUsuario}"></td> 
+						<td>
+							<a th:href="@{'/usuario/edit/' + ${umusuario.id}}" class="btn btn-primary btn-lg">Alterar</a>
+							<button class="btn btn-danger btn-lg js-delete" th:data-user-id="${umusuario.id}">Excluir</button>
+						</td>
+						 
 					</tr>
 				</tbody>
 			</table>
@@ -34,7 +39,7 @@
 					bootbox.confirm("Você tem certeza que quer excluir este usuário?", function(result){
 						if(result){
 							$.ajax({
-								url: "/cliente/delete/" + button.attr("data-user-id")
+								url: "/usuario/delete/" + button.attr("data-user-id")
 								, method: "GET"
 								, success: function() {
 									window.location.href = "/usuario/"
