@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<meta charset="utf-8"/> 
 	<head th:include="layout :: htmlhead"></head>
 	<body>
 		<div class="container">	
@@ -23,7 +22,7 @@
 						<td th:text="${umusuario.nivelUsuario}"></td> 
 						<td>
 							<a th:href="@{'/usuario/edit/' + ${umusuario.id}}" class="btn btn-primary btn-lg">Alterar</a>
-							<button class="btn btn-danger btn-lg js-delete" th:data-user-id="${umusuario.id}"><i class="fas fa-spider fa-spin"></i></button>
+							<button class="btn btn-danger btn-lg js-delete" th:data-user-id="${umusuario.id}">Excluir</button>
 						</td>
 						 
 					</tr>
