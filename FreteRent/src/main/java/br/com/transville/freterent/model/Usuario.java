@@ -42,9 +42,10 @@ public class Usuario {
 	@Column(length = 500)
 	private String nome;
 	
+	private String login;
+	
 	private long cdFuncionario;
 	
-	private String usuario;
 	
 	private String logAlteracao;
 	
@@ -59,7 +60,7 @@ public class Usuario {
 	
 	private int cdEmpresa;
 
-	//private int inAtivo;
+	private int inAtivo;
 	
 	
 	public long getId() {
@@ -102,12 +103,12 @@ public class Usuario {
 		this.cdFuncionario = cdFuncionario;
 	}
 
-	public String getUsuario() {
-		return usuario;
+	public String getLogin() {
+		return login;
 	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setLogin(String login) {
+		this.login = login;
 	}
 
 	public String getLogAlteracao() {
@@ -149,5 +150,13 @@ public class Usuario {
 	public void setCdEmpresa(int cdEmpresa) {
 		this.cdEmpresa = cdEmpresa;
 	}
-		
+	
+	public int getInAtivo() {
+		return inAtivo;
+	}
+
+	public void setInAtivo(int inAtivo) {
+		this.inAtivo = inAtivo;
+	}		
+	
 }
