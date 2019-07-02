@@ -16,6 +16,14 @@
 				        id="txtnome" placeholder="Nome">
 				    </div>
 				    
+   				    				    
+				    <div class="form-group">
+				        <label for="txtdatanascimento">Data de Nascimento</label>
+				        <input type="date" th:field="*{dataNascimento}" class="form-control" 
+				        		id="txtdatanascimento" placeholder="Data de Nascimento">
+				    </div>
+				    
+				    
    				   	<div class="form-group">
 				        <label for="txtemail">E-mail</label>
 				        <input type="text" th:field="*{email}" class="form-control" 
@@ -28,27 +36,48 @@
 				        id="txtlogin" placeholder="Login">
 				    </div>
 				    
+       				 <div class="form-group">
+				        <label for="txtsenha">Senha</label>
+				        <input type="text" th:field="*{senha}" class="form-control" 
+				        id="txtsenha" placeholder="Senha">
+				    </div>
+				    
 				    <div class="form-group">
-				        <label for="txtcdfuncionario">Matrícula Funcionário</label>
-				        <input type="number" th:field="*{cdFuncionario}" class="form-control" 
-				        id="intnivelusuario" placeholder="Matrícula Funcionário">
+				        <label for="txtmatriculafuncionario">Matrícula Funcionário</label>
+				        <input type="number" th:field="*{matriculaFuncionario}" class="form-control" 
+				        id="txtmatriculafuncionario" placeholder="Matrícula Funcionário">
 				    </div> 
 				    
+   				    <div class="form-group">
+				        <label for="txtcdempresa">Filial</label>
+				        <input type="number" th:field="*{cdEmpresa}" class="form-control" 
+				        id="txtcdempresa" placeholder="Filial">
+				    </div> 
+				    
+				    <!-- 
    				    <div class="form-group">
 				        <label for="txtnivelusuario">Nível Usuário</label>
 				        <input type="number" th:field="*{nivelUsuario}" class="form-control" 
 				        id="txtnivelusuario" placeholder="Nível Usuário">
-				    </div> 
-				    
-				    <!-- <input type="date"> -->
-				    
-				    <!-- 
-				    <div class="form-group">
-				        <label for="txtdataNascimento">Data Nascimento</label>
-				        <input type="text" th:field="*{dataNascimento}" class="form-control" 
-				        		id="txtdataNascimento" placeholder="Data">
 				    </div>
 				     --> 
+				    
+   				    <div class="form-group">
+				        <label for="txtnivelusuario">Nível Usuário</label>
+				        <select class="form-control" id="txtnivelusuario" th:field="*{nivelUsuario}">
+				            <option th:value="Usuário">Usuário</option>
+				            <option th:value="Administrador">Administrador</option>
+				        </select>
+				    </div>
+				    
+   				    <div class="form-group">
+				        <label for="txtinativo">Usuário Ativo</label>
+				        <select class="form-control" id="txtinativo" th:field="*{inAtivo}">
+				            <option th:value=0>Ativo</option>
+				            <option th:value=1>Inativo</option>
+				        </select>
+				    </div>
+
 				    <button type="submit" class="btn btn-primary">Enviar</button>
 				</form>
 			</div>

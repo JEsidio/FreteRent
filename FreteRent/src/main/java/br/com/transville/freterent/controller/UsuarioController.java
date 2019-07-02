@@ -29,6 +29,12 @@ public class UsuarioController {
 		return new ModelAndView("usuario/index", "usuarios", listaUsuarios);
 	}
 	
+	@GetMapping("/listar")
+	public ModelAndView listar() {
+		List<Usuario> listaUsuarios = usuarioService.getAll();
+		return new ModelAndView("usuario/listar", "usuarios", listaUsuarios);
+	}
+	
 	@GetMapping("/novo")
 	public ModelAndView createForm(@ModelAttribute Usuario usuario) {
 		return new ModelAndView("usuario/form");
@@ -37,7 +43,7 @@ public class UsuarioController {
 	@PostMapping(params="form")
 	public ModelAndView save(@Valid Usuario usuario) {
 		usuarioService.save(usuario);
-		return new ModelAndView("redirect:/usuario");
+		return new ModelAndView("redirect:/usuario/listar");
 	}
 	
 	@GetMapping(value="/edit/{id}")

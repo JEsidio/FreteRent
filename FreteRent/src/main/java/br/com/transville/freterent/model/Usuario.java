@@ -44,7 +44,7 @@ public class Usuario {
 	
 	private String login;
 	
-	private long cdFuncionario;
+	private long matriculaFuncionario;
 	
 	
 	private String logAlteracao;
@@ -52,11 +52,10 @@ public class Usuario {
 	//@Temporal(value=TemporalType.TIMESTAMP)
 	@Temporal(value=TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
-	private Date nascimento;
+	private Date dataNascimento;
 	
-	private int nivelUsuario;
 	
-	private String dsNivelUsuario;
+	private String nivelUsuario;
 	
 	private int cdEmpresa;
 
@@ -95,12 +94,12 @@ public class Usuario {
 		this.nome = nome;
 	}
 
-	public long getCdFuncionario() {
-		return cdFuncionario;
+	public long getMatriculaFuncionario() {
+		return matriculaFuncionario;
 	}
 
-	public void setCdFuncionario(long cdFuncionario) {
-		this.cdFuncionario = cdFuncionario;
+	public void setMatriculaFuncionario(long matriculaFuncionario) {
+		this.matriculaFuncionario = matriculaFuncionario;
 	}
 
 	public String getLogin() {
@@ -119,28 +118,21 @@ public class Usuario {
 		this.logAlteracao = logAlteracao;
 	}
 
-	public Date getNascimento() {
-		return nascimento;
+	public Date getDataNascimento() {
+		return dataNascimento;
 	}
 
-	public void setNascimento(Date nascimento) {
-		this.nascimento = nascimento;
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
 
-	public int getNivelUsuario() {
+
+	public String getNivelUsuario() {
 		return nivelUsuario;
 	}
 
-	public void setNivelUsuario(int nivelUsuario) {
+	public void setNivelUsuario(String nivelUsuario) {
 		this.nivelUsuario = nivelUsuario;
-	}
-
-	public String getDsNivelUsuario() {
-		return dsNivelUsuario;
-	}
-
-	public void setDsNivelUsuario(String dsNivelUsuario) {
-		this.dsNivelUsuario = dsNivelUsuario;
 	}
 
 	public int getCdEmpresa() {

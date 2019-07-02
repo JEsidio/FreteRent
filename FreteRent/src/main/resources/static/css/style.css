@@ -3,3 +3,80 @@
     padding-left: 0px;
     padding-right: 0px;
 }
+
+.navbar{
+	
+}
+
+.bg-dark {
+    background-color: black!important;
+}
+
+.card{
+	max-width: 90%;
+	margin-top: 65px;
+	margin-left: 75px;
+}
+
+.thead{
+	background-color: #800000!important;
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+}
+
+th{
+	color: white!important;
+    text-align: center;
+}
+
+.table{
+	background-color: silver!important;
+}
+
+td{
+	font-weight: bold;
+    text-align: center;
+}
+
+.btn-outline-warning{
+	background-color:white;
+    color: #ffc107;
+    background-image: none;
+    border-color: #ffc107;
+}
+
+.btn-outline-danger{
+	background-color:white;
+    color: #dc3545;
+    background-image: none;
+    border-color: #dc3545;
+}
+
+.btn-outline-success{
+	background-color:white;
+    color: #28a745;
+    background-image: none;
+    border-color: #28a745;
+}
+
+
+.table-bordered td, .table-bordered th {
+    border: 2px solid black;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid black;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%; /* At the bottom of the tooltip */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
