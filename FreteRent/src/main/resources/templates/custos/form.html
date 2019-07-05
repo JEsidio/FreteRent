@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<meta charset="utf-8"/> 
+	<head th:include="layout :: htmlhead"></head>
+	<body>
+	<nav th:replace="layout :: menu">(menu)</nav>
+	<div class="card">
+		<div class="container">
+			
+ 			<div class="border border-dark">
+				<form th:action="@{/custos/(form)}" th:object="${custos}" action="#" method="post" class="needs-validation" novalidate>
+					
+					<input type="hidden" id="txtid" th:field="*{id}"/>
+				    
+				    
+				    <div class="form-row">
+				    	<div class="form-group col-md-4">
+					        <label for="txtdscusto">Custo Descrição</label>
+				        	<input type="text" th:field="*{dsCusto}" class="form-control" 
+				        		id="txtdscusto" placeholder="Custo Descrição">
+			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>
+				    	</div>
+				    	
+				    	<div class="form-group col-md-4">
+				        	<label for="txtdtCusto">Data do Custo</label>
+				        	<input type="date" th:field="*{dtCusto}" class="form-control" 
+				        		id="txtdtCusto" placeholder="Data do Custo">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>
+				    	</div>
+				    	
+				    	<div class="form-group col-md-4">
+   				        	<label for="txtcdempresa">Filial Custo</label>
+				        	<input type="number" th:field="*{cdEmpresa}" class="form-control" 
+				        		id="txtcdempresa" placeholder="Filial">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>			        		
+				    	</div>
+				    </div>
+				    
+				    
+				    
+   				    <div class="form-row">
+				    	<div class="form-group col-md-2">
+   				        	<label for="txtcustocoletaentrega">Coleta Entrega</label>
+				        	<input type="number" th:field="*{custoColetaEntrega}" class="form-control" 
+				        		id="txtcustocoletaentrega" placeholder="Coleta Entrega">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>	
+				    	</div>
+				    	
+				    	<div class="form-group col-md-2">
+   				        	<label for="txtcustocargadescarga">Carga Descarga</label>
+				        	<input type="number" th:field="*{custoCargaDescarga}" class="form-control" 
+				        		id="txtcustocargadescarga" placeholder="Carga Descarga">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>	
+				    	</div>
+				    	
+				    	<div class="form-group col-md-2">
+   				        	<label for="txtcustotransferencia">Transferência</label>
+				        	<input type="number" th:field="*{custoTransferencia}" class="form-control" 
+				        		id="txtcustotransferencia" placeholder="Transferência">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>			        		
+				    	</div>
+				    	
+				    	<div class="form-group col-md-2">
+   				        	<label for="txtdespesasoperacionais">Despesas Operacionais</label>
+				        	<input type="number" th:field="*{despesasOperacionais}" class="form-control" 
+				        		id="txtdespesasoperacionais" placeholder="Despesas Operacionais">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>			        		
+				    	</div>
+				    	
+				    	<div class="form-group col-md-2">
+   				        	<label for="txtmatrizdespesacusto">Matriz Custo</label>
+				        	<input type="number" th:field="*{matrizDespesaCusto}" class="form-control" 
+				        		id="txtmatrizdespesacusto" placeholder="Matriz Custo">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>			        		
+				    	</div>
+				    </div>
+	
+
+				    <button type="submit" class="btn btn-success">Salvar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+		<div th:include="layout :: footer" id="footer">(footer)</div>
+		
+		<script>
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+			(function() {
+			  'use strict';
+			  window.addEventListener('load', function() {
+			    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+			    var forms = document.getElementsByClassName('needs-validation');
+			    // Loop over them and prevent submission
+			    var validation = Array.prototype.filter.call(forms, function(form) {
+			      form.addEventListener('submit', function(event) {
+			        if (form.checkValidity() === false) {
+			          event.preventDefault();
+			          event.stopPropagation();
+			        }
+			        form.classList.add('was-validated');
+			      }, false);
+			    });
+			  }, false);
+			})();
+		</script>
+		
+		
+	</body>
+</html>

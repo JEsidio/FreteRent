@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<meta charset="utf-8"/> 
+	<head th:include="layout :: htmlhead"></head>
+	<body>
+	<nav th:replace="layout :: menu">(menu)</nav>
+	<div class="card">
+		
+		<div class="table-responsive">
+			<table class="table table-hover table-lg table-bordered" id="custos">
+				<thead class="thead"> 
+					<tr>
+						<th scope="col">Custo Descrição</th>
+						<th scope="col">Data Custo</th>
+						<th scope="col">Coleta Entrega</th>
+						<th scope="col">Carga Descarga</th>
+						<th scope="col">Transferência</th>
+						<th scope="col">Despesas Operacionais</th>
+						<th scope="col">Despesas Matriz</th>
+						<th scope="col"><a href="form.html" th:href="@{/custos/novo}" class="btn btn-outline-success btn-md" role="button"><i class="fas fa-user-plus fa-spin"></i></a></th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr scope="row" th:each="umcusto : ${custos}">
+						<td th:text="${umcusto.dsCusto}"></td>
+						<td th:text="${#dates.format(umcusto.dtCusto, 'dd/MM/yyyy')}"></td>
+						<td th:text="${umcusto.custoColetaEntrega}"></td>
+						<td th:text="${umcusto.custoCargaDescarga}"></td>
+						<td th:text="${umcusto.custoTransferencia}"></td> 
+						<td th:text="${umcusto.despesasOperacionais}"></td>  
+						<td th:text="${umcusto.matrizDespesaCusto}"></td> 
+						<td> 
+							<a th:href="@{'/custos/edit/' + ${umcusto.id}}" class="btn btn-outline-warning btn-md"><i class="fas fa-user-edit fa-spin"></i></a>
+							<button class="btn btn-outline-danger btn-md js-delete" th:data-user-id="${umcusto.id}"><i class="fas fa-user-times fa-spin"></i></button>
+						</td>
+						 
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		
+	</div>
+		<div th:include="layout :: footer" id="footer">(footer)</div>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#custos").on("click", ".js-delete", function(){
+					var button = $(this);
+			
+					bootbox.confirm("Você tem certeza que quer excluir este usuário?", function(result){
+						if(result){
+							$.ajax({
+								url: "/custos/delete/" + button.attr("data-user-id")
+								, method: "GET"
+								, success: function() {
+									window.location.href = "/custos/listar"
+								}
+							});
+						}
+					});
+				});
+			});			
+		</script>
+		
+	</body>
+</html>

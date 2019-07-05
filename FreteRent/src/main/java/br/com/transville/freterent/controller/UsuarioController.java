@@ -19,7 +19,6 @@ import br.com.transville.freterent.service.UsuarioService;
 @Controller
 @RequestMapping("/usuario")
 public class UsuarioController {
-	
 	@Autowired
 	private UsuarioService usuarioService;
 	
@@ -54,7 +53,7 @@ public class UsuarioController {
 	@GetMapping(value="/delete/{id}")
 	public ModelAndView delete(@PathVariable("id") Usuario usuario) {
 		usuarioService.delete(usuario);
-		return new ModelAndView("redirect:/usuario");
+		return new ModelAndView("redirect:/usuario/listar");
 	}
 	
 }

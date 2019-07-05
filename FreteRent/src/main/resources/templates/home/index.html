@@ -1,3 +1,4 @@
+<!-- 
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	<meta charset="utf-8"/> 
@@ -18,7 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                   <li class="nav-item active">
-                    <a class="nav-link" href="/usuario">Home</a>
+                    <a class="nav-link" href="/home">Home</a>
                   </li>
                   
                   <li class="nav-item active">
@@ -35,4 +36,21 @@
             <script th:src="@{/webjars/bootbox.js/4.4.0/bootbox.js}"></script>
         </div>
     </body>
+</html>
+ -->
+ 
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<meta charset="utf-8"/> 
+	<head th:include="layout :: htmlhead"></head>
+	<nav th:replace="layout :: menu">(menu)</nav>
+	<body>
+		<div class="container">	
+		
+		<img src="/images/wallpaper.jpg" class="img-fluid" alt="Responsive image">
+
+		</div>
+		<div th:include="layout :: footer" id="footer">(footer)</div>
+		
+	</body>
 </html>

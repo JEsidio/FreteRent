@@ -80,3 +80,11 @@ td{
   border-style: solid;
   border-color: black transparent transparent transparent;
 }
+
+form{
+	margin: 20px;
+}
+
+.border {
+    border: 2px solid black!important;
+}

@@ -10,24 +10,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-
 import org.springframework.format.annotation.DateTimeFormat;
-/*
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-*/
+
 
 @Entity
-/*
-@Data
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-*/
 public class Usuario {
 
 	@Id
@@ -46,14 +32,12 @@ public class Usuario {
 	
 	private long matriculaFuncionario;
 	
-	
 	private String logAlteracao;
 	
 	//@Temporal(value=TemporalType.TIMESTAMP)
 	@Temporal(value=TemporalType.DATE)
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date dataNascimento;
-	
 	
 	private String nivelUsuario;
 	

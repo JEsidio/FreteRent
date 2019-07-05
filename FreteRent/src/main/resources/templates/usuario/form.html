@@ -3,13 +3,113 @@
 	<meta charset="utf-8"/> 
 	<head th:include="layout :: htmlhead"></head>
 	<body>
+	<nav th:replace="layout :: menu">(menu)</nav>
+	<div class="card">
 		<div class="container">
-			<nav th:replace="layout :: menu">(menu)</nav>
+			
  			<div class="border border-dark">
-				<form th:action="@{/usuario/(form)}" th:object="${usuario}" action="#" method="post">
+				<form th:action="@{/usuario/(form)}" th:object="${usuario}" action="#" method="post" class="needs-validation" novalidate>
 					
 					<input type="hidden" id="txtid" th:field="*{id}"/>
 				    
+				    
+				    <div class="form-row">
+				    	<div class="form-group col-md-4">
+					        <label for="txtnome">Nome</label>
+				        	<input type="text" th:field="*{nome}" class="form-control" 
+				        		id="txtnome" placeholder="Nome">
+			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>
+				    	</div>
+				    	
+				    	<div class="form-group col-md-4">
+				        	<label for="txtdatanascimento">Data de Nascimento</label>
+				        	<input type="date" th:field="*{dataNascimento}" class="form-control" 
+				        		id="txtdatanascimento" placeholder="Data de Nascimento">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>
+				    	</div>
+				    	
+				    	<div class="form-group col-md-4">
+				        	<label for="txtmatriculafuncionario">Matrícula Funcionário</label>
+				        	<input type="number" th:field="*{matriculaFuncionario}" class="form-control" 
+				        		id="txtmatriculafuncionario" placeholder="Matrícula Funcionário">
+   			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>			        		
+				    	</div>
+				    </div>
+
+
+				    <div class="form-row">
+				    	<div class="form-group col-md-4">
+				       		<label for="txtemail">E-mail</label>
+				        	<input type="text" th:field="*{email}" class="form-control" 
+				        		id="txtemail" placeholder="E-mail">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>
+				    	</div>
+				    	
+				    	<div class="form-group col-md-4">
+				        	<label for="txtlogin">Login</label>
+				        	<input type="text" th:field="*{login}" class="form-control" 
+				        		id="txtlogin" placeholder="Login">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>				        		
+				    	</div>
+				    	
+				    	<div class="form-group col-md-4">
+				        	<label for="txtsenha">Senha</label>
+				        	<input type="password" th:field="*{senha}" class="form-control" 
+				        	id="txtsenha" placeholder="Senha">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>		        	
+				    	</div>
+				    </div>				    
+				    		    
+				    
+			    	<div class="form-row">
+				    	<div class="form-group col-md-4">
+   				        	<label for="txtcdempresa">Filial</label>
+				        	<input type="number" th:field="*{cdEmpresa}" class="form-control" 
+				        		id="txtcdempresa" placeholder="Filial">
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>
+				    	</div>
+				    	
+				    	<div class="form-group col-md-4">
+   					        <label for="txtnivelusuario">Nível Usuário</label>
+				        	<select class="form-control" id="txtnivelusuario" th:field="*{nivelUsuario}">
+				            	<option th:value="Usuário">Usuário</option>
+				            	<option th:value="Administrador">Administrador</option>
+				        	</select>
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>
+				    	</div>
+				    	
+				    	<div class="form-group col-md-4">
+   				        	<label for="txtinativo">Usuário Ativo</label>
+				        	<select class="form-control" id="txtinativo" th:field="*{inAtivo}">
+				            	<option th:value=0>Ativo</option>
+				            	<option th:value=1>Inativo</option>
+				        	</select>
+  			        		      <div class="valid-feedback">
+							        Looks good!
+							      </div>				        	
+				    	</div>
+				    </div>	
+				    
+
+
+				    
+				    <!--  
 				    <div class="form-group">
 				        <label for="txtnome">Nome</label>
 				        <input type="text" th:field="*{nome}" class="form-control" 
@@ -38,7 +138,7 @@
 				    
        				 <div class="form-group">
 				        <label for="txtsenha">Senha</label>
-				        <input type="text" th:field="*{senha}" class="form-control" 
+				        <input type="password" th:field="*{senha}" class="form-control" 
 				        id="txtsenha" placeholder="Senha">
 				    </div>
 				    
@@ -60,7 +160,7 @@
 				        <input type="number" th:field="*{nivelUsuario}" class="form-control" 
 				        id="txtnivelusuario" placeholder="Nível Usuário">
 				    </div>
-				     --> 
+				     -> 
 				    
    				    <div class="form-group">
 				        <label for="txtnivelusuario">Nível Usuário</label>
@@ -77,11 +177,39 @@
 				            <option th:value=1>Inativo</option>
 				        </select>
 				    </div>
+					-->
 
-				    <button type="submit" class="btn btn-primary">Enviar</button>
+
+
+
+				    <button type="submit" class="btn btn-success">Salvar</button>
 				</form>
 			</div>
 		</div>
+	</div>
 		<div th:include="layout :: footer" id="footer">(footer)</div>
+		
+		<script>
+			// Example starter JavaScript for disabling form submissions if there are invalid fields
+			(function() {
+			  'use strict';
+			  window.addEventListener('load', function() {
+			    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+			    var forms = document.getElementsByClassName('needs-validation');
+			    // Loop over them and prevent submission
+			    var validation = Array.prototype.filter.call(forms, function(form) {
+			      form.addEventListener('submit', function(event) {
+			        if (form.checkValidity() === false) {
+			          event.preventDefault();
+			          event.stopPropagation();
+			        }
+			        form.classList.add('was-validated');
+			      }, false);
+			    });
+			  }, false);
+			})();
+		</script>
+		
+		
 	</body>
 </html>
