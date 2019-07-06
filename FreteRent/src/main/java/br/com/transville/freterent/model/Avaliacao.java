@@ -14,18 +14,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+
 
 @Entity
-@Data
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class Avaliacao {
 
 	@Id
@@ -71,6 +62,142 @@ public class Avaliacao {
 	private double margemContribuicao;
 	
 	private String logAlteracao;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Date getDtGeracao() {
+		return dtGeracao;
+	}
+
+	public void setDtGeracao(Date dtGeracao) {
+		this.dtGeracao = dtGeracao;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
+	public long getCdRemetente() {
+		return cdRemetente;
+	}
+
+	public void setCdRemetente(long cdRemetente) {
+		this.cdRemetente = cdRemetente;
+	}
+
+	public String getDsRemetente() {
+		return dsRemetente;
+	}
+
+	public void setDsRemetente(String dsRemetente) {
+		this.dsRemetente = dsRemetente;
+	}
+
+	public int getCdRegiao() {
+		return cdRegiao;
+	}
+
+	public void setCdRegiao(int cdRegiao) {
+		this.cdRegiao = cdRegiao;
+	}
+
+	public String getDsRegiao() {
+		return dsRegiao;
+	}
+
+	public void setDsRegiao(String dsRegiao) {
+		this.dsRegiao = dsRegiao;
+	}
+
+	public int getQtdeNotasFiscais() {
+		return qtdeNotasFiscais;
+	}
+
+	public void setQtdeNotasFiscais(int qtdeNotasFiscais) {
+		this.qtdeNotasFiscais = qtdeNotasFiscais;
+	}
+
+	public double getPesoCubado() {
+		return pesoCubado;
+	}
+
+	public void setPesoCubado(double pesoCubado) {
+		this.pesoCubado = pesoCubado;
+	}
+
+	public double getValorMercadoria() {
+		return valorMercadoria;
+	}
+
+	public void setValorMercadoria(double valorMercadoria) {
+		this.valorMercadoria = valorMercadoria;
+	}
+
+	public double getReceitaFrete() {
+		return receitaFrete;
+	}
+
+	public void setReceitaFrete(double receitaFrete) {
+		this.receitaFrete = receitaFrete;
+	}
+
+	public double getCustoTransferencia() {
+		return custoTransferencia;
+	}
+
+	public void setCustoTransferencia(double custoTransferencia) {
+		this.custoTransferencia = custoTransferencia;
+	}
+
+	public double getCustoColeta() {
+		return custoColeta;
+	}
+
+	public void setCustoColeta(double custoColeta) {
+		this.custoColeta = custoColeta;
+	}
+
+	public double getCustoEntrega() {
+		return custoEntrega;
+	}
+
+	public void setCustoEntrega(double custoEntrega) {
+		this.custoEntrega = custoEntrega;
+	}
+
+	public double getOutrosCustos() {
+		return outrosCustos;
+	}
+
+	public void setOutrosCustos(double outrosCustos) {
+		this.outrosCustos = outrosCustos;
+	}
+
+	public double getMargemContribuicao() {
+		return margemContribuicao;
+	}
+
+	public void setMargemContribuicao(double margemContribuicao) {
+		this.margemContribuicao = margemContribuicao;
+	}
+
+	public String getLogAlteracao() {
+		return logAlteracao;
+	}
+
+	public void setLogAlteracao(String logAlteracao) {
+		this.logAlteracao = logAlteracao;
+	}
 	
 
 }

@@ -9,18 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
-@Data
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class ValoresTabelaCliente {
 	
 	@Id
@@ -49,6 +39,110 @@ public class ValoresTabelaCliente {
 	
 	private double pedagio;
 	
-	private double tas;	
+	private double tas;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public int getCdEmpresa() {
+		return cdEmpresa;
+	}
+
+	public void setCdEmpresa(int cdEmpresa) {
+		this.cdEmpresa = cdEmpresa;
+	}
+
+	public int getNrTabela() {
+		return nrTabela;
+	}
+
+	public void setNrTabela(int nrTabela) {
+		this.nrTabela = nrTabela;
+	}
+
+	public String getDsTabela() {
+		return dsTabela;
+	}
+
+	public void setDsTabela(String dsTabela) {
+		this.dsTabela = dsTabela;
+	}
+
+	public long getTipoTabela() {
+		return tipoTabela;
+	}
+
+	public void setTipoTabela(long tipoTabela) {
+		this.tipoTabela = tipoTabela;
+	}
+
+	public int getCdRegiao() {
+		return cdRegiao;
+	}
+
+	public void setCdRegiao(int cdRegiao) {
+		this.cdRegiao = cdRegiao;
+	}
+
+	public int getFaixaPeso() {
+		return faixaPeso;
+	}
+
+	public void setFaixaPeso(int faixaPeso) {
+		this.faixaPeso = faixaPeso;
+	}
+
+	public double getValorMinimo() {
+		return valorMinimo;
+	}
+
+	public void setValorMinimo(double valorMinimo) {
+		this.valorMinimo = valorMinimo;
+	}
+
+	public double getTaxa() {
+		return taxa;
+	}
+
+	public void setTaxa(double taxa) {
+		this.taxa = taxa;
+	}
+
+	public double getFreteValor() {
+		return freteValor;
+	}
+
+	public void setFreteValor(double freteValor) {
+		this.freteValor = freteValor;
+	}
+
+	public double getGrisMinimo() {
+		return grisMinimo;
+	}
+
+	public void setGrisMinimo(double grisMinimo) {
+		this.grisMinimo = grisMinimo;
+	}
+
+	public double getPedagio() {
+		return pedagio;
+	}
+
+	public void setPedagio(double pedagio) {
+		this.pedagio = pedagio;
+	}
+
+	public double getTas() {
+		return tas;
+	}
+
+	public void setTas(double tas) {
+		this.tas = tas;
+	}	
 
 }
