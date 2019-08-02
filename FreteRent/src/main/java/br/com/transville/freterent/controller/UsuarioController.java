@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,7 +41,11 @@ public class UsuarioController {
 	}
 	
 	@PostMapping(params="form")
-	public ModelAndView save(@Valid Usuario usuario) {
+	public ModelAndView save(@Valid Usuario usuario, BindingResult result) {
+		
+		if (result.hasErrors()) {
+			return new ModelAndView("usuario/form");
+		}
 		usuarioService.save(usuario);
 		return new ModelAndView("redirect:/usuario/listar");
 	}

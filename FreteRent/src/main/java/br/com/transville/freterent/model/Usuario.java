@@ -2,7 +2,6 @@ package br.com.transville.freterent.model;
 
 import java.util.Date;
 
-import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 
@@ -25,6 +28,11 @@ public class Usuario {
 	
 	private String senha;
 
+	@NotNull()
+	@NotEmpty(message = "O campo nome não pode ser em branco")
+	//@Min(value = 5, message = "Deve possuir pelo menos cinco caracteres")
+	@Size(min = 5, max = 10, message = "Deve possuir pelo menos cinco caracteres e no máximo 10")
+	//@Pattern(regexp = )
 	@Column(length = 500)
 	private String nome;
 	
