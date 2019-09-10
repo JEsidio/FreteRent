@@ -1,6 +1,7 @@
 package br.com.transville.freterent.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Override
 	public void delete(Usuario usuario) {
 		repository.delete(usuario);
+	}
+
+	@Override
+	public Optional<Usuario> findById(long id) {
+		return repository.findById(id);
 	}
 
 }
