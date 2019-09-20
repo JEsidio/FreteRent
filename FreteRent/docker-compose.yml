@@ -10,14 +10,15 @@ services:
      restart: always
      environment:
        - SPRING_PROFILES_ACTIVE=prod
-       - DSI2019_DB_HOST=jdbc:sqlserver://localhost;databaseName=FreteRent
-       - DSI2019_DB_USERNAME=bob
-       - DSI2019_DB_PASSWORD=bob
+       - DSI2019_DB_HOST=jdbc:sqlserver://dbfreterent:1433;databaseName=model
+       - DSI2019_DB_USERNAME=SA
+       - DSI2019_DB_PASSWORD=<YourStrong@Passw0rd>
    dbfreterent:
-     image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+     image: mcr.microsoft.com/mssql/server:2017-latest
      restart: always
-#     ports:
-#       - "3306:3306"
+     ports:
+       - "1433:1433"
      environment:
-       ACCEPT_EULA=Y
-       SA_PASSWORD=bob
+       - ACCEPT_EULA=Y
+       - SA_PASSWORD=<YourStrong@Passw0rd>
+       

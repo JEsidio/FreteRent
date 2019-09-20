@@ -1,0 +1,7 @@
+SUBIR O DOCKER: docker-compose up -d
+
+DERRUBAR O DOCKER: docker-compose down
+
+LISTAR OS ERROS: docker logs ID
+
+LISTAR AS IMAGENS: docker ps
