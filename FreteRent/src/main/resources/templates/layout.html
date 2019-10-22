@@ -31,6 +31,13 @@
                 </ul>
             </div>
             
+            Hello [[${#httpServletRequest.remoteUser}]]!
+
+			<form th:action="@{/logout}" method="post">
+            	<input type="submit" value="Sair" class="btn"/>
+            </form>
+            
+            
         </nav>
          
         <div th:fragment="footer" id="footer">
