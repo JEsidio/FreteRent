@@ -27,6 +27,8 @@ public class Usuario {
 	private String email;
 	
 	private String senha;
+	
+	private String role;
 
 	@NotNull()
 	@NotEmpty(message = "O campo nome não pode ser em branco")
@@ -76,6 +78,14 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public String getRole() {
+		return role;
+	}
+	
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	public String getNome() {

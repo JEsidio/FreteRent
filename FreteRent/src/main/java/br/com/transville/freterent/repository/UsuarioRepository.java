@@ -6,4 +6,5 @@ import br.com.transville.freterent.model.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 	Usuario findByNome(String nome);
+	Usuario findByLogin(String login);
 }
